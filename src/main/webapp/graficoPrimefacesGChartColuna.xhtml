@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+<h:head>
+    <title>Primefaces Google Charts</title>
+
+
+
+
+
+</h:head>
+
+<h:body>
+    <p:panel header="Primefaces GChart Coluna">
+        <h:form>
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
+            <p:messages id="messages">
+                <p:autoUpdate/>
+            </p:messages>
+            <p:outputPanel id="container" layout="block">
+                <pe:gChart id="grafico" value="#{graficoPrimefacesGChartColunaBean.grafico}" title="Grafico de Colunas" >
+                    <p:ajax listener="#{graficoPrimefacesGChartColunaBean.onSelect}"/>
+                </pe:gChart>
+            </p:outputPanel>
+            <p:button href="index.xhtml" value="Voltar"></p:button>
+        </h:form>
+    </p:panel>
+</h:body>
+
+</html>
