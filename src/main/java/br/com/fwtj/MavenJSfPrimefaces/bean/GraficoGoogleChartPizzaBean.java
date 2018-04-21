@@ -6,6 +6,7 @@ import br.com.fwtj.MavenJSfPrimefaces.util.GoogleChartsUtils;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import java.util.List;
  */
 @Named
 @RequestScoped
-public class GraficoGoogleChartBarraBean {
+public class GraficoGoogleChartPizzaBean {
 
     private String dados = "";
 
@@ -32,12 +33,14 @@ public class GraficoGoogleChartBarraBean {
     private void init() {
 
         List<LinhaGoogleChartsUmaColuna> linhaGoogleChartsUmaColunaList = new ArrayList<>();
-        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("11h", "123.56"));
-        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("12h", "193.56"));
-        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("13h", "223.56"));
-        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("14h", "23.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("Dinheiro - " + NumberFormat.getCurrencyInstance().format(4123.56), "4123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("Cheque - " + NumberFormat.getCurrencyInstance().format(2123.56), "2123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("Ticket - " + NumberFormat.getCurrencyInstance().format(1123.56), "1123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("Cartão - " + NumberFormat.getCurrencyInstance().format(7123.56), "7123.56"));
 
-        dados = GoogleChartsUtils.dadosGraficoUmaColuna("Hora", "Valor", linhaGoogleChartsUmaColunaList);
+        dados = GoogleChartsUtils.dadosGraficoUmaColuna("Finalizadora", "Valor", linhaGoogleChartsUmaColunaList);
+
     }
+
 
 }

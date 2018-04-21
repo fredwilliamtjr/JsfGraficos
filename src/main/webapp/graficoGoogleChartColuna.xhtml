@@ -23,6 +23,9 @@
 
                     var dataDoBean = google.visualization.arrayToDataTable( #{graficoGoogleChartColunaBean.dados} );
 
+                    var formatter = new google.visualization.NumberFormat({ prefix: '',decimalSymbol: ',', groupingSymbol: '.' });
+                    formatter.format(dataDoBean, 1);
+
                     var view = new google.visualization.DataView(dataDoBean);
                     view.setColumns([0, 1,
                         {

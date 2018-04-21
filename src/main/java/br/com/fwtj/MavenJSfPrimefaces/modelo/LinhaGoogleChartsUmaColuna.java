@@ -1,4 +1,4 @@
-package br.com.fwtj.MavenJSfPrimefaces.bean;
+package br.com.fwtj.MavenJSfPrimefaces.modelo;
 
 /**
  * Autor: Fred William Torno Junior
@@ -9,12 +9,12 @@ package br.com.fwtj.MavenJSfPrimefaces.bean;
  * Hora: 10:54
  * Copyright©Fwtj Sistemas. Todos os direitos reservados.
  */
-public class LinhaGraficoColuna {
+public class LinhaGoogleChartsUmaColuna {
 
     private String hora;
     private String valor;
 
-    public LinhaGraficoColuna(String hora, String valor) {
+    public LinhaGoogleChartsUmaColuna(String hora, String valor) {
         this.hora = hora;
         this.valor = valor;
     }
@@ -34,6 +34,5 @@ public class LinhaGraficoColuna {
     public void setValor(String valor) {
         this.valor = valor;
     }
-
 
 }

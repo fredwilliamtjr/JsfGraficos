@@ -1,11 +1,13 @@
 package br.com.fwtj.MavenJSfPrimefaces.bean;
 
+import br.com.fwtj.MavenJSfPrimefaces.modelo.LinhaGoogleChartsUmaColuna;
+import br.com.fwtj.MavenJSfPrimefaces.util.CorUtils;
+import br.com.fwtj.MavenJSfPrimefaces.util.GoogleChartsUtils;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,62 +29,29 @@ public class GraficoGoogleChartColunaBean {
         return dados;
     }
 
-    public void setDados(String dados) {
-        this.dados = dados;
-    }
-
-
-    private String abreDados() {
-        return "[";
-    }
-
-    private String fechaDados() {
-        return "]";
-    }
-
-    private String separadorDados() {
-        return ",";
-    }
-
-    private String colunaDados(String nomeColula, String nomeValor) {
-        return "[\"" + nomeColula + "\", \"" + nomeValor + "\", {role: \"style\"}]";
-    }
-
-    private String linhaDados(String nomeLinha, String valorLinha, String corLinha) {
-        return "[\"" + nomeLinha + "\", " + valorLinha + ", \"" + corLinha + "\"]";
-    }
-
-
     @PostConstruct
     private void init() {
-        StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append(abreDados());
-        stringBuilder.append(colunaDados("Hora", "Valor"));
-        stringBuilder.append(separadorDados());
+        List<LinhaGoogleChartsUmaColuna> linhaGoogleChartsUmaColunaList = new ArrayList<>();
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("06h", "1234.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("07h", "4123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("08h", "5123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("09h", "7123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("10h", "3123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("11h", "5123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("12h", "7193.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("13h", "2223.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("14h", "2623.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("15h", "2123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("16h", "9193.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("17h", "3223.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("18h", "3523.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("19h", "1123.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("20h", "7193.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("21h", "4223.56"));
+        linhaGoogleChartsUmaColunaList.add(new LinhaGoogleChartsUmaColuna("22h", "5523.56"));
 
-        List<LinhaGraficoBarra> linhaGraficoBarraList = new ArrayList<>();
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("11h", "123.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("12h", "193.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("13h", "223.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("14h", "23.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("11h", "123.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("12h", "193.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("13h", "223.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("14h", "23.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("11h", "123.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("12h", "193.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("13h", "223.56", CorUtils.getCorRandonicaHex()));
-        linhaGraficoBarraList.add(new LinhaGraficoBarra("14h", "23.56", CorUtils.getCorRandonicaHex()));
-
-        linhaGraficoBarraList.forEach(linhaGraficoBarra -> {
-            stringBuilder.append(linhaDados(linhaGraficoBarra.getHora(), linhaGraficoBarra.getValor(), linhaGraficoBarra.getCor()));
-            stringBuilder.append(separadorDados());
-        });
-
-        stringBuilder.append(fechaDados());
-        String toString = stringBuilder.toString();
-        dados = toString;
+        dados = GoogleChartsUtils.dadosGraficoUmaColuna("Hora", "Valor", linhaGoogleChartsUmaColunaList);
 
     }
 

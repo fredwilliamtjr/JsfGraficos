@@ -1,4 +1,4 @@
-package br.com.fwtj.MavenJSfPrimefaces.bean;
+package br.com.fwtj.MavenJSfPrimefaces.util;
 
 import java.awt.*;
 import java.util.Arrays;
