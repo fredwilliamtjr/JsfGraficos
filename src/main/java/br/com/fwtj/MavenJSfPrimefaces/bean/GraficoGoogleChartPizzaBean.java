@@ -1,7 +1,7 @@
 package br.com.fwtj.MavenJSfPrimefaces.bean;
 
-import br.com.fwtj.MavenJSfPrimefaces.modelo.LinhaGoogleChartsUmaColuna;
-import br.com.fwtj.MavenJSfPrimefaces.util.GoogleChartsUtils;
+import br.com.fwtj.MavenJSfPrimefaces.util.googlecharts.LinhaGoogleChartsUmaColuna;
+import br.com.fwtj.MavenJSfPrimefaces.util.googlecharts.GoogleChartsUtils;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;

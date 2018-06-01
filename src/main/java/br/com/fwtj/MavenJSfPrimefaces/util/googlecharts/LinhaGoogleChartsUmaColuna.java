@@ -1,4 +1,4 @@
-package br.com.fwtj.MavenJSfPrimefaces.modelo;
+package br.com.fwtj.MavenJSfPrimefaces.util.googlecharts;
 
 /**
  * Autor: Fred William Torno Junior

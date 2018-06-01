@@ -1,6 +1,4 @@
-package br.com.fwtj.MavenJSfPrimefaces.util;
-
-import br.com.fwtj.MavenJSfPrimefaces.modelo.LinhaGoogleChartsUmaColuna;
+package br.com.fwtj.MavenJSfPrimefaces.util.googlecharts;
 
 import java.util.List;
 

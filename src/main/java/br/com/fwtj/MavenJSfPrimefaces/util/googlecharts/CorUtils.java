@@ -1,4 +1,4 @@
-package br.com.fwtj.MavenJSfPrimefaces.util;
+package br.com.fwtj.MavenJSfPrimefaces.util.googlecharts;
 
 import java.awt.*;
 import java.util.Arrays;

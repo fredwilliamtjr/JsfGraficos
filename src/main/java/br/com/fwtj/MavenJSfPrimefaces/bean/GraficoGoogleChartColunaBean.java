@@ -1,11 +1,11 @@
 package br.com.fwtj.MavenJSfPrimefaces.bean;
 
-import br.com.fwtj.MavenJSfPrimefaces.modelo.LinhaGoogleChartsUmaColuna;
-import br.com.fwtj.MavenJSfPrimefaces.util.CorUtils;
-import br.com.fwtj.MavenJSfPrimefaces.util.GoogleChartsUtils;
+import br.com.fwtj.MavenJSfPrimefaces.util.googlecharts.LinhaGoogleChartsUmaColuna;
+import br.com.fwtj.MavenJSfPrimefaces.util.googlecharts.GoogleChartsUtils;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
